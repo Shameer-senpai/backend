@@ -9,11 +9,15 @@ const createUser = async(req,res)=>{
       age
    });
 
-   res.send(user);
+   res.json(user);
 }
 const getUsers = async(req,res) => {
     const users = await User.find();
     res.json(users)
 }
-module.exports = createUser;
-module.exports = getUser;
+const getUsersById = async(req,res)=>{
+    const usersById = await User.findById();
+    res.json(usersById)
+}
+module.exports = {createUser,
+ getUsers,getUsersById};

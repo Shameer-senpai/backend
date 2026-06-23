@@ -1,17 +1,19 @@
-const userName = document.getElementById("name");
-const userAge = document.getElementById("age");
-const submitbtn = document.getElementById("submitbtn");
-const userEmail = document.getElementById("email");
-const userPwd = document.getElementById("pwd");
-const userRole = document.getElementById("role");
+const name = document.getElementById("name").value;
+const age = document.getElementById("age").value;
+const submitbtn = document.getElementById("submitbtn").value;
+const email = document.getElementById("email").value;
+const pwd = document.getElementById("pwd").value;
+const role = document.getElementById("role").value;
 submitbtn.addEventListener("click",
-    async ()=>{
+    async (e)=>{
+      e.preventDefault();
      const info = {
-        name:userName.value,
-        age:userAge.value,
-        email:userEmail.value,
-        pwd:userPwd.value,
-        role:userRole.value
+       name,
+       age,
+       submitbtn,
+       email,
+       pwd,
+       role
      };
      const response = await fetch(
       "http://localhost:5000/api/user",{

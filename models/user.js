@@ -8,9 +8,24 @@ const userSchema = new mongoose.Schema({
         type:Number,
         required : true
     },
+    email:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    password:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    role:{
+        enum:["Recruiter","Applicant"],
+        required:true
+    }
+
 },
 {
     timestamps:true
 });
 const User = mongoose.model("User",userSchema);
-module.exports=User;
+module.exports = User;

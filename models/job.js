@@ -21,7 +21,13 @@ const jobSchema = new mongoose.Schema({
       type:Number,
       required:true
     },
+    createdBy:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"User"
+    }
+},{
     timestamps:true
-});
+  }
+);
 const Job = mongoose.model("Job",jobSchema);
 module.exports = Job ;

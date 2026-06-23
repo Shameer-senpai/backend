@@ -1,0 +1,8 @@
+const {getApplications,
+    getApplicationById,
+ submitApplication} = require("../controllers/appController");
+const router = express.Router();
+router.get("/",getApplications);
+router.get("/:id",getApplicationById);
+router.post("/",submitApplication);
+module.exports = router;
