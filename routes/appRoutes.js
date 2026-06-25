@@ -1,6 +1,7 @@
 const {getApplications,
     getApplicationById,
- submitApplication} = require("../controllers/appController");
+    submitApplication} = require("../controllers/appController");
+const express = require("express");
 const router = express.Router();
 router.get("/",getApplications);
 router.get("/:id",getApplicationById);
